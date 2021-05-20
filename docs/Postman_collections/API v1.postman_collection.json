@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "c1233590-6699-45d1-8796-362fd6219eea",
+		"name": "API v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Poll",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"question\": \"Who will win SuperBowl this month?\",\n  \"options\": [\n    {\n      \"value\": \"New England Patriots\"\n    },\n    {\n      \"value\": \"Seattle Seahawks\"\n    },\n    {\n      \"value\": \"Green Bay Packers\"\n    },\n    {\n      \"value\": \"Denver Broncos\"\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/polls",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"polls"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Poll",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 2,\n  \"question\": \"What is your favorite Social Network?\",\n  \"options\": [\n    {\n      \"id\": 5,\n      \"value\": \"Twitter\"\n    },\n    {\n      \"id\": 6,\n      \"value\": \"FaceBook\"\n    },\n    {\n      \"id\": 7,\n      \"value\": \"LinkedIn\"\n    },\n     {\n      \"id\": 8,\n      \"value\": \"Myspace\"\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/polls/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"polls",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Polls",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/polls",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"polls"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Poll #1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/polls/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"polls",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Poll #1",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/polls/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"polls",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Vote",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"option\": {\n    \"id\": 1,\n    \"value\": \"New England Patriots\"\n  }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/polls/1/votes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"polls",
+						"1",
+						"votes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Votes For Poll #1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/polls/1/votes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"polls",
+						"1",
+						"votes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Result",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/computeresult?pollId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"computeresult"
+					],
+					"query": [
+						{
+							"key": "pollId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

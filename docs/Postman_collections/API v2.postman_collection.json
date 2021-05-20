@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "b14cc73a-acdc-4b15-a6c6-27ad1bada76b",
+		"name": "API v2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Polls With Sorting",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v2/polls/?sort=question",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v2",
+						"polls",
+						""
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "question"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Polls With Paging",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v2/polls/?page=0&size=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v2",
+						"polls",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Polls With Paging & Sorting",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v2/polls/?page=1&size=2&sort=question%2Casc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v2",
+						"polls",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "2"
+						},
+						{
+							"key": "sort",
+							"value": "question%2Casc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Poll",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"question\": \"what is your favourite color but in Version 2?\",\n  \"options\": [\n    {\n      \"value\": \"Red\"\n    },\n    {\n      \"value\": \"Blue\"\n    },\n    {\n      \"value\": \"Black\"\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v2/polls/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v2",
+						"polls",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
